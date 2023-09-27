@@ -9,18 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack{
+        ZStack{ //為了用編輯按鈕是懸浮的且背景顏色
             Color.black
-                   .ignoresSafeArea()
+                   .ignoresSafeArea() //滿版因為有瀏海
             VStack{
                 HStack{
-                    Image("spring")
+                    Image("spring") // spring icon
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30, height: 30)
-                        .alignmentGuide(.leading) { _ in 0 }
+                        .alignmentGuide(.leading) { _ in 0 }//position
                         .clipShape(Rectangle())
-                        .background(
+                        .background( //圓角加方形
                             RoundedRectangle(cornerRadius: 5)
                                     .stroke(Color.white, lineWidth: 8)
                         )
@@ -31,7 +31,7 @@ struct ContentView: View {
                         .background(Color.black)
                     
                    
-                    Image("filterNew")
+                    Image("filterNew")//filter icon
                         .resizable()
                         .scaledToFit()
                         .frame(width: 15, height: 15)
@@ -44,7 +44,7 @@ struct ContentView: View {
                 
                 ZStack{
                     Color.gray
-                        .opacity(0.2)
+                        .opacity(0.2) //background color set
                     VStack{
                         Spacer().frame(height:10)
                         
@@ -71,7 +71,7 @@ struct ContentView: View {
                                     .foregroundColor(Color.gray.opacity(0.9))
                                 Spacer().frame(width:300)
                             }
-                            Spacer().frame(height:20)
+                            Spacer().frame(height:20) // 中間區隔
                             HStack{
                                 Image("send")
                                     .resizable()
@@ -97,7 +97,7 @@ struct ContentView: View {
                             }
                         }
                         Divider()
-                            .background(Color.white)
+                            .background(Color.white) //設定分線顏色
                         
                         
                         VStack{
@@ -216,14 +216,14 @@ struct ContentView: View {
                                     .frame(width: 20, height: 18)
                                     .clipShape(Rectangle())
                             }
-                            HStack{
-                                ZStack(alignment: .bottomTrailing){
+                            HStack{ //為了讓其有綠色動態狀態所以用ＺＳtack
+                                ZStack(alignment:  .bottomTrailing){
                                     Image("profile")
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 16, height: 18)
                                         .clipShape(RoundedRectangle(cornerRadius: 5, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                                     
+                                     // use overlay to generate the black circle border
                                     Text("")
                                         .font(.system(size: 50))
                                         .frame(width: 5, height: 5)
@@ -270,7 +270,7 @@ struct ContentView: View {
                                 .foregroundColor(Color.gray.opacity(0.9))
                             Spacer().frame(width:188)
                         }
-                        Spacer()
+                        Spacer() //為了讓工作列在最底下
                     }
                     
                 }
